@@ -25025,35 +25025,65 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var SearchGithub = __webpack_require__(219);
-
-	var Main = React.createClass({
-	    displayName: 'Main',
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'main-container' },
-	            React.createElement(
-	                'nav',
-	                { className: 'navbar navbar-default', role: 'navigation' },
-	                React.createElement(
-	                    'div',
-	                    { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
-	                    React.createElement(SearchGithub, null)
-	                )
-	            ),
-	            React.createElement(
-	                'div',
-	                { className: 'container' },
-	                this.props.children
-	            )
-	        );
-	    }
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
 	});
 
-	module.exports = Main;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SearchGithub = __webpack_require__(219);
+
+	var _SearchGithub2 = _interopRequireDefault(_SearchGithub);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Main = function (_React$Component) {
+	    _inherits(Main, _React$Component);
+
+	    function Main() {
+	        _classCallCheck(this, Main);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
+	    }
+
+	    _createClass(Main, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'main-container' },
+	                _react2.default.createElement(
+	                    'nav',
+	                    { className: 'navbar navbar-default', role: 'navigation' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
+	                        _react2.default.createElement(_SearchGithub2.default, { history: this.props.history })
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container' },
+	                    this.props.children
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Main;
+	}(_react2.default.Component);
+
+	exports.default = Main;
 
 /***/ },
 /* 219 */
@@ -25061,48 +25091,91 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(168);
-
-	var SearchGithub = React.createClass({
-	    displayName: 'SearchGithub',
-
-	    mixins: [Router.History],
-	    getRef: function getRef(ref) {
-	        this.usernameRef = ref;
-	    },
-	    handleSubmit: function handleSubmit() {
-	        var username = this.usernameRef.value;
-	        this.usernameRef = '';
-	        this.history.pushState(null, "/profile/" + username);
-	    },
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'col-sm-12' },
-	            React.createElement(
-	                'form',
-	                { onSubmit: this.handleSubmit },
-	                React.createElement(
-	                    'div',
-	                    { className: 'form-group col-sm-7' },
-	                    React.createElement('input', { type: 'text', className: 'form-control', ref: this.getRef })
-	                ),
-	                React.createElement(
-	                    'div',
-	                    { className: 'form-group col-sm-5' },
-	                    React.createElement(
-	                        'button',
-	                        { className: 'btn btn-block btn-primary' },
-	                        ' Search Github'
-	                    )
-	                )
-	            )
-	        );
-	    }
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
 	});
 
-	module.exports = SearchGithub;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
+
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SearchGithub = function (_React$Component) {
+	    _inherits(SearchGithub, _React$Component);
+
+	    function SearchGithub() {
+	        _classCallCheck(this, SearchGithub);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(SearchGithub).apply(this, arguments));
+	    }
+
+	    _createClass(SearchGithub, [{
+	        key: 'getRef',
+	        value: function getRef(ref) {
+	            this.usernameRef = ref;
+	        }
+	    }, {
+	        key: 'handleSubmit',
+	        value: function handleSubmit() {
+	            var username = this.usernameRef.value;
+	            this.usernameRef = '';
+	            this.props.history.pushState(null, '/profile/' + username);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-12' },
+	                _react2.default.createElement(
+	                    'form',
+	                    { onSubmit: function onSubmit() {
+	                            return _this2.handleSubmit();
+	                        } },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'form-group col-sm-7' },
+	                        _react2.default.createElement('input', { type: 'text', className: 'form-control', ref: function ref(_ref) {
+	                                return _this2.getRef(_ref);
+	                            } })
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'form-group col-sm-5' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'btn btn-block btn-primary' },
+	                            ' Search Github'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SearchGithub;
+	}(_react2.default.Component);
+
+	SearchGithub.PropTypes = {
+	    history: _react2.default.PropTypes.object.isRequired
+	};
+
+	exports.default = SearchGithub;
 
 /***/ },
 /* 220 */
@@ -25110,21 +25183,48 @@
 
 	"use strict";
 
-	var React = __webpack_require__(1);
-
-	var Home = React.createClass({
-	    displayName: "Home",
-
-	    render: function render() {
-	        return React.createElement(
-	            "h2",
-	            { className: "text-center" },
-	            "Search by Github Username Above"
-	        );
-	    }
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
 	});
 
-	module.exports = Home;
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_React$Component) {
+	    _inherits(Home, _React$Component);
+
+	    function Home() {
+	        _classCallCheck(this, Home);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).apply(this, arguments));
+	    }
+
+	    _createClass(Home, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "h2",
+	                { className: "text-center" },
+	                "Search by Github Username Above"
+	            );
+	        }
+	    }]);
+
+	    return Home;
+	}(_react2.default.Component);
+
+	exports.default = Home;
 
 /***/ },
 /* 221 */
