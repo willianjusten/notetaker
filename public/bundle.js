@@ -25078,18 +25078,25 @@
 	    },
 	    componentDidMount: function componentDidMount() {
 	        this.ref = new Firebase('https://incandescent-inferno-6992.firebaseio.com/');
-	        var childRef = this.ref.child(this.props.params.username);
+	        this.init(this.props.params.username);
+	    },
+	    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	        this.unbind('notes');
+	        this.init(nextProps.params.username);
+	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.unbind('notes');
+	    },
+	    init: function init(username) {
+	        var childRef = this.ref.child(username);
 	        this.bindAsArray(childRef, 'notes');
 
-	        helpers.getGithubInfo(this.props.params.username).then(function (data) {
+	        helpers.getGithubInfo(username).then(function (data) {
 	            this.setState({
 	                bio: data.bio,
 	                repos: data.repos
 	            });
 	        }.bind(this));
-	    },
-	    componentWillUnmount: function componentWillUnmount() {
-	        this.unbind('notes');
 	    },
 	    handleAddNote: function handleAddNote(newNote) {
 	        this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote);
@@ -25138,7 +25145,6 @@
 	        repos: React.PropTypes.array.isRequired
 	    },
 	    render: function render() {
-	        console.log(this.props.repos);
 	        var repos = this.props.repos.map(function (repo, index) {
 	            return React.createElement(
 	                "li",
@@ -26042,7 +26048,7 @@
 	    handleSubmit: function handleSubmit() {
 	        var username = this.usernameRef.value;
 	        this.usernameRef = '';
-	        this.history.pushState(null, "profile/" + username);
+	        this.history.pushState(null, "/profile/" + username);
 	    },
 	    render: function render() {
 	        return React.createElement(

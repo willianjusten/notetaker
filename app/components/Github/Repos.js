@@ -6,7 +6,6 @@ var Repos = React.createClass({
         repos: React.PropTypes.array.isRequired
     },
     render: function() {
-        console.log(this.props.repos);
         var repos = this.props.repos.map(function(repo, index){
             return (
                 <li className="list-group-item" key={index}>
