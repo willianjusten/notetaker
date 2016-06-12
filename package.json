@@ -9,6 +9,7 @@
   "author": "Willian Justen de Vasconcellos <willianjustenqui@gmail.com> (http://willianjusten.com.br/)",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.8.0",
     "firebase": "^2.3.2",
     "history": "^1.13.1",
     "react": "^15.1.0",
