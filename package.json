@@ -12,6 +12,7 @@
     "axios": "^0.8.0",
     "firebase": "^2.3.2",
     "history": "^1.13.1",
+    "re-base": "^1.5.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^1.0.1",
